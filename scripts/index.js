@@ -4,8 +4,10 @@ function fetchTextFile() {
   fetch("./plain.txt")
     .then((response) => response.text())
     .then((data) => {
+      let newData = data;
+      newData = `<div class="data">${data}</div>`;
       console.log(data);
-      document.querySelector(".result").innerHTML = data;
+      document.querySelector(".result").innerHTML = newData;
     })
     .catch((err) => console.log(err));
 }
