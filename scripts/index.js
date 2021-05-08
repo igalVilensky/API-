@@ -65,11 +65,13 @@ function fetchApiComments() {
     .then((response) => response.json())
     .then((data) => {
       let card = "<h2> Comments API response </h2>";
+
       data.forEach((comments) => {
         let { postId, id, name, email, body } = comments;
+
         card += `
-        <div>
-        <h2>The post id is - ${postId}</h2>
+        <div >
+        <p class="id">${postId}</p>
           <h1>Commented by: ${name} (User ID: ${id})</h1>
           
           
@@ -80,8 +82,18 @@ function fetchApiComments() {
         
         
         `;
+        let names = { comments };
+
+        console.log(names);
       });
+
       document.querySelector(".result").innerHTML = card;
+
+      let element = document.querySelector(".id");
+      console.log(typeof element);
+      element.style.backgroundColor = "pink";
+
+      console.log(`${card}`);
     })
     .catch((err) => console.log(err));
 }

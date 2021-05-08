@@ -35,6 +35,9 @@
   margin: 10px;
   text-align: center;
 }
+.result div .id {
+  border: 3px solid pink;
+}
 .result .data {
   position: absolute;
   top: 30%;
